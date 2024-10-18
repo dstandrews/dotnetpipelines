@@ -39,7 +39,7 @@ jobs:
         run: echo Hello, world!
   QA:
     runs-on: ubuntu-latest
-    needs: Dev
+    needs: build
     name: deployToQA
     environment:
       name: QA
@@ -49,7 +49,7 @@ jobs:
         run: echo Hello, world!
   Prod:
     runs-on: ubuntu-latest
-    needs: QA
+    needs: build
     name: deployToProd
     environment:
       name: Prod
